@@ -6,4 +6,4 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return{"message": "hello world"}
+    return {"message": "Hello World during the coronavirus pandemic!"}
