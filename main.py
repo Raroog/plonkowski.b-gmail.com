@@ -9,21 +9,21 @@ app = FastAPI(debug = 'true')
 #class Prowadzacyssiepaue(BaseModel):
 #	msg :str
 
-@app.get("/method")
+@app.get("/get")
 async def get_fun():
     return {"get": "GET"}
 
-@app.post("/method")
+@app.post("/post")
 async def post_fun():
 	return{"post" : "POST"}
 
 
-@app.put("/method")
+@app.put("/pu")
 async def put_fun():
 	return {"put": "PUT"}
 
 
-@app.delete("/method")
+@app.delete("/delete")
 async def delete_fun():
 	return{"delete" : "DELETE"}   
 
