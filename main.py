@@ -14,9 +14,8 @@ async def get_fun():
 
 
 class Post(BaseModel):
-	post : str
+	post : str = "POST"
 
-{"post" : "POST"}
 
 @app.post("/method/")
 async def post_fun(post : Post):
@@ -26,9 +25,8 @@ async def post_fun(post : Post):
 
 
 class Put(BaseModel):
-	put : str
+	put : str = "PUT"
 
-{"put" : "PUT"}
 
 @app.put("/method/")
 async def put_fun(put : Put):
@@ -38,9 +36,7 @@ async def put_fun(put : Put):
 
 
 class Delete(BaseModel):
-	delete : str
-
-{"delete" : "DELETE"}
+	delete : str = "DELETE"
 
 @app.delete("/method/")
 async def delete_fun(delete : Delete):
