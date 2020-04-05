@@ -13,9 +13,9 @@ app = FastAPI(debug = 'true')
 async def get_fun():
     return {"get": "GET"}
 
-#@app.post("/method")
-#async def post_fun():
-#	return{"post" : "POST"}
+@app.post("/method")
+async def post_fun():
+	return{"post" : "POST"}
 
 
 #@app.put("/method")
