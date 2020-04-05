@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 app = FastAPI(debug = 'true')
 
-@app.get("/get/")
+@app.get("/method")
 async def get_fun():
     return {"get": "GET"}
 
@@ -14,12 +14,10 @@ async def get_fun():
 
 
 class Post(BaseModel):
-	msg : str
+	name : str = "POST"
 
 
-a = {"msg" : "POST"}
-
-@app.post("/a/")
+@app.post("/method")
 async def post_fun(post : Post):
 	return post
 
@@ -27,12 +25,11 @@ async def post_fun(post : Post):
 
 
 class Put(BaseModel):
-	msg : str
+	name : str = "PUT"
 
 
-b = {"msg" : "PUT"}
 
-@app.put("/b/")
+@app.put("/method")
 async def put_fun(put : Put):
 	return put
 
@@ -40,11 +37,10 @@ async def put_fun(put : Put):
 
 
 class Delete(BaseModel):
-	delete : str
+	name : str = "DELETE"
 
-c = {"msg" : "DELETE"}
 
-@app.delete("/c/")
+@app.delete("/method")
 async def delete_fun(delete : Delete):
 	return delete   
 
