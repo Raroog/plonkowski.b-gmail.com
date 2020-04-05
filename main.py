@@ -5,25 +5,44 @@ from pydantic import BaseModel
 
 app = FastAPI(debug = 'true')
 
-
-#class Prowadzacyssiepaue(BaseModel):
-#	msg :str
-
-@app.get("/method")
+@app.get("/method/")
 async def get_fun():
     return {"get": "GET"}
 
-@app.post("/method")
-async def post_fun():
-	return{"post" : "POST"}
 
 
-@app.put("/method")
-async def put_fun():
-	return {"put": "PUT"}
 
 
-@app.delete("/method")
-async def delete_fun():
-	return{"delete" : "DELETE"}   
+class Post(BaseModel):
+	post : str
+
+{"post" : "POST"}
+
+@app.post("/method/")
+async def post_fun(post : Post):
+	return post
+
+
+
+
+class Put(BaseModel):
+	put : str
+
+{"put" : "PUT"}
+
+@app.put("/method/")
+async def put_fun(put : Put):
+	return put
+
+
+
+
+class Delete(BaseModel):
+	delete : str
+
+{"delete" : "DELETE"}
+
+@app.delete("/method/")
+async def delete_fun(delete : Delete):
+	return delete   
 
