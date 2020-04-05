@@ -18,12 +18,12 @@ async def post_fun():
 	return{"post" : "POST"}
 
 
-#@app.put("/method")
-#async def put_fun():
-#	return {"put": "PUT"}
+@app.put("/method")
+async def put_fun():
+	return {"put": "PUT"}
 
 
-#@app.delete("/method")
-#async def delete_fun():
-#	return{"delete" : "DELETE"}   
+@app.delete("/method")
+async def delete_fun():
+	return{"delete" : "DELETE"}   
 
