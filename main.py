@@ -18,7 +18,7 @@ async def post_fun():
 	return{"post" : "POST"}
 
 
-@app.put("/pu")
+@app.put("/put")
 async def put_fun():
 	return {"put": "PUT"}
 
