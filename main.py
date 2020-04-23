@@ -1,28 +1,21 @@
 #main.py
 
-from fastapi import FastAPI
-from pydantic import BaseModel
 
-app = FastAPI(debug = 'true')
-
-#class Prowadzacyssiepaue(BaseModel):
-#	msg :str
-
-@app.get("/method")
-async def get_fun():
-    return {"get": "GET"}
+from fastapi import FastAPI, Request, Response, status
 
 
-#@app.post("/method")
-#async def post_fun():
-#	return{"post" : "POST"}
 
 
-#@app.put("/method")
-#async def put_fun():
-#	return {"put": "PUT"}
+
+@app.get("/welcome")
+def read_root():
+    return {"message": "Welcome universe, this is planet Earth"}
 
 
-#@app.delete("/method")
-#async def delete_fun():
-#	return{"delete" : "DELETE"}   
+@app.get("/")
+def read_root():
+    return {"message": "Hello men and women"}
+
+
+
+
